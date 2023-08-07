@@ -10,7 +10,7 @@ def display_chat_message(role, content):
         avatar = padty
     elif role == 'user':
         avatar = colin
-    with st.chat_message(role, avatar):
+    with st.chat_message(role, avatar=None):
         st.markdown(content)
 
 def display_intro():
