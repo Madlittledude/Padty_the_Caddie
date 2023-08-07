@@ -10,7 +10,7 @@ def display_chat_message(role, content):
         avatar = padty
     elif role == 'user':
         avatar = colin
-    with st.chat_message(role, avatar=avatar if avatar else None):
+    with st.chat_message(role, avatar):
         st.markdown(content)
 
 def display_intro():
@@ -34,7 +34,7 @@ def display_chat_interface():
         display_chat_message(message["role"], message["content"])
 
     # User input
-    prompt = st.chat_input("Start thinking with your fingers...get your thoughts out, Colin")
+    prompt = st.chat_input("Start thinking with your fingers...get your thoughts out")
     if prompt:
         # Set the state to indicate the user has sent their first message
         st.session_state.first_message_sent = True
