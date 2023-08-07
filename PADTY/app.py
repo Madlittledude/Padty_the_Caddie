@@ -24,10 +24,10 @@ def display_intro():
     st.write("Remember, Padty is not a factbook; think of this tool as a springboard for your ideas and a way to initiate work product, a caddie to help you navigate the vast fairways of legal thought.")
     st.write(":heart: Max")
 
-
+colin = "https://raw.githubusercontent.com/Madlittledude/Padty_the_Caddie/main/PADTY/colin.png"
+padty = "https://raw.githubusercontent.com/Madlittledude/Padty_the_Caddie/main/PADTY/padty.png"
 def display_chat_interface():
-    colin = "https://raw.githubusercontent.com/Madlittledude/Padty_the_Caddie/main/PADTY/colin.png"
-    padty = "https://raw.githubusercontent.com/Madlittledude/Padty_the_Caddie/main/PADTY/padty.png"
+
     for message in st.session_state.messages:
         if message["role"] == "system":
             continue
@@ -42,7 +42,7 @@ def display_chat_interface():
         st.session_state.messages.append({"role": "user", "content": prompt})
         display_chat_message("user", prompt,colin)
 
-        with st.chat_message("assistant"):
+        with st.chat_message("assistant",avatar=None):
             message_placeholder = st.empty()
             full_response = ""
             for response in openai.ChatCompletion.create(
