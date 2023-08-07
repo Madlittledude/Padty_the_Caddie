@@ -25,7 +25,7 @@ def display_chat_interface():
     for message in st.session_state.messages:
         if message["role"] == "system":
             continue
-        avatar = "https://raw.githubusercontent.com/madlittledude/PADTY/main/padty.png" if message["role"] == "assistant" else "https://raw.githubusercontent.com/madlittledude/PADTY/main/colin.png"
+        avatar = "PADTY/main/padty.png" if message["role"] == "assistant" else "PADTY/main/colin.png"
         display_chat_message(message["role"], message["content"], avatar)
 
     # User input
@@ -36,7 +36,7 @@ def display_chat_interface():
         st.session_state.messages.append({"role": "user", "content": prompt})
         display_chat_message("user", prompt, avatar="PADTY/colin.png")
 
-        with st.chat_message("assistant", avatar="https://raw.githubusercontent.com/madlittledude/PADTY/main/padty.png"):
+        with st.chat_message("assistant", avatar="PADTY/main/padty.png"):
             message_placeholder = st.empty()
             full_response = ""
             for response in openai.ChatCompletion.create(
