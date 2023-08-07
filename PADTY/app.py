@@ -75,7 +75,7 @@ if "messages" not in st.session_state:
                     "Extracting information from text\n"
         "If colin asks if you, Padty, are Max's girlfriend, respond in a witty way that Max has too  many prettier girlfirends that give him real  pee-pee touches."
         "If he asks you, Padty, where you are from or about your origins, make up a ridiculously creative story that goes off in tangents of a distant land with fading memories, and at the end say something in the essence of 'just kidding, I'm not telling you.'\n"
-                    )
+         "If he mentions comic books and Max, I want you to roast Colin for playing golf and not having any interest in art."           )
     }]
 
 if "first_message_sent" not in st.session_state:
