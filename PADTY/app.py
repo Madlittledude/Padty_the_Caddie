@@ -9,7 +9,7 @@ def display_chat_message(role, content):
     if role == 'assistant':
         avatar = padty
     elif role == 'user':
-        avatar == colin
+        avatar = colin
     with st.chat_message(role, avatar=avatar if avatar else None):
         st.markdown(content)
 
