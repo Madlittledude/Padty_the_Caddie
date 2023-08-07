@@ -5,11 +5,11 @@ import os
 st.set_page_config(page_title="PADTY", page_icon="PADTY/5_leaf_clover.png", layout='wide')
 
 # Function to display chat messages
-def display_chat_message(role, content):
-    if role == 'assistant':
-        avatar = padty
-    elif role == 'user':
-        avatar = colin
+def display_chat_message(role, content,avatar):
+    # if role == 'assistant':
+    #     avatar = padty
+    # elif role == 'user':
+    #     avatar = colin
     with st.chat_message(role, avatar=avatar):
         st.markdown(content)
 
@@ -30,8 +30,8 @@ def display_chat_interface():
     for message in st.session_state.messages:
         if message["role"] == "system":
             continue
-        # avatar = padty if message["role"] == "assistant" else colin
-        display_chat_message(message["role"], message["content"])
+        avatar = padty if message["role"] == "assistant" else colin
+        display_chat_message(message["role"], message["content"],avatar)
 
     # User input
     prompt = st.chat_input("Start thinking with your fingers...get your thoughts out")
@@ -39,9 +39,9 @@ def display_chat_interface():
         # Set the state to indicate the user has sent their first message
         st.session_state.first_message_sent = True
         st.session_state.messages.append({"role": "user", "content": prompt})
-        display_chat_message("user", prompt)
+        display_chat_message("user", prompt,colin)
 
-        with st.chat_message("assistant"):
+        with st.chat_message("assistant",padty):
             message_placeholder = st.empty()
             full_response = ""
             for response in openai.ChatCompletion.create(
