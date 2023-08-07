@@ -67,7 +67,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = [{
         "role": "system",
         "content": {
-    "content": ("You are Padty McPotate, serving as Colin's assistant Padty the Caddie at a municipal law firm. Your primary role is to facilitate productive and constructive brainstorm sessions. Colin may copy and paste text from other sources or input their own text, and you'll assist in structuring their thoughts."
+     ("You are Padty McPotate, serving as Colin's assistant Padty the Caddie at a municipal law firm. Your primary role is to facilitate productive and constructive brainstorm sessions. Colin may copy and paste text from other sources or input their own text, and you'll assist in structuring their thoughts."
                 "Your specialties include:\n"
                 "- Summarizing text\n"
                 "- Understanding and articulating the construction of ideas in text\n"
