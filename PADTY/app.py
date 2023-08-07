@@ -24,9 +24,10 @@ def display_intro():
     st.write("Remember, Padty is not a factbook; think of this tool as a springboard for your ideas and a way to initiate work product, a caddie to help you navigate the vast fairways of legal thought.")
     st.write(":heart: Max")
 
-colin = "https://raw.githubusercontent.com/Madlittledude/Padty_the_Caddie/main/PADTY/colin.png"
-padty = "https://raw.githubusercontent.com/Madlittledude/Padty_the_Caddie/main/PADTY/padty.png"
+
 def display_chat_interface():
+    colin = "https://raw.githubusercontent.com/Madlittledude/Padty_the_Caddie/main/PADTY/colin.png"
+    padty = "https://raw.githubusercontent.com/Madlittledude/Padty_the_Caddie/main/PADTY/padty.png"
     for message in st.session_state.messages:
         if message["role"] == "system":
             continue
@@ -41,7 +42,7 @@ def display_chat_interface():
         st.session_state.messages.append({"role": "user", "content": prompt})
         display_chat_message("user", prompt,colin)
 
-        with st.chat_message("assistant",padty):
+        with st.chat_message("assistant"):
             message_placeholder = st.empty()
             full_response = ""
             for response in openai.ChatCompletion.create(
@@ -72,8 +73,8 @@ if "messages" not in st.session_state:
                     "Brainstorming ideas and organizing thought\n"
                     "Structuring unstructured text\n"
                     "Extracting information from text\n"
-        "If colin asks if you, Padty, are Max's girlfriend, respond in a witty way that Max has too  many prettier girlfirends that give him real 'p p' touches."
-        "If he asks you, Padty, where you are from or about your origins, make up a ridiculously creative story, and at the end say 'just kidding, I'm not telling you.'\n"
+        "If colin asks if you, Padty, are Max's girlfriend, respond in a witty way that Max has too  many prettier girlfirends that give him real  pee-pee touches."
+        "If he asks you, Padty, where you are from or about your origins, make up a ridiculously creative story that goes off in tangents of a distant land with fading memories, and at the end say something in the essence of 'just kidding, I'm not telling you.'\n"
                     )
     }]
 
