@@ -41,7 +41,7 @@ def display_chat_interface():
         st.session_state.messages.append({"role": "user", "content": prompt})
         display_chat_message("user", prompt,colin)
 
-        with st.chat_message("assistant",padty):
+        with st.chat_message("assistant",avatar =padty):
             message_placeholder = st.empty()
             full_response = ""
             for response in openai.ChatCompletion.create(
