@@ -34,9 +34,9 @@ def display_chat_interface():
         # Set the state to indicate the user has sent their first message
         st.session_state.first_message_sent = True
         st.session_state.messages.append({"role": "user", "content": prompt})
-        display_chat_message("user", prompt, avatar="Padty_the_Caddie/main/PADTY/colin.png")
+        display_chat_message("user", prompt, avatar=avatar)
 
-        with st.chat_message("assistant", avatar="Padty_the_Caddie/main/PADTY/padty.png"):
+        with st.chat_message("assistant", avatar=avatar):
             message_placeholder = st.empty()
             full_response = ""
             for response in openai.ChatCompletion.create(
