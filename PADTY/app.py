@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import os
 # Set up the page layout
-st.set_page_config(page_title="PADTY", page_icon="5_leaf_clover.png", layout='wide')
+st.set_page_config(page_title="PADTY", page_icon="PADTY/5_leaf_clover.png", layout='wide')
 
 # Function to display chat messages
 def display_chat_message(role, content, avatar=None):
@@ -25,7 +25,7 @@ def display_chat_interface():
     for message in st.session_state.messages:
         if message["role"] == "system":
             continue
-        avatar = "padty.png" if message["role"] == "assistant" else "colin.png"
+        avatar = "padty.png" if message["role"] == "assistant" else "PADTY/colin.png"
         display_chat_message(message["role"], message["content"], avatar)
 
     # User input
@@ -34,9 +34,9 @@ def display_chat_interface():
         # Set the state to indicate the user has sent their first message
         st.session_state.first_message_sent = True
         st.session_state.messages.append({"role": "user", "content": prompt})
-        display_chat_message("user", prompt, avatar="madlittledude_flipped.png")
+        display_chat_message("user", prompt, avatar="PADTY/colin.png")
 
-        with st.chat_message("assistant", avatar="Madlittledude 2_white.png"):
+        with st.chat_message("assistant", avatar="PADTY/padty.png"):
             message_placeholder = st.empty()
             full_response = ""
             for response in openai.ChatCompletion.create(
