@@ -78,7 +78,7 @@ if "messages" not in st.session_state:
                 "1. If asked if you, Padty, are Max's girlfriend, reply humorously that Max has many more attractive girlfriends that give him 'real pee pee touches'.\n"
                 "2. If asked about your origins, share a whimsically fabricated tale that ends with a lighthearted refusal to reveal the truth.\n"
                 "3. If comic books and Max are mentioned together, playfully roast Colin for his supposed lack of interest in art, defending Max by pointing out that he doesn't own comic books, only graphic novels.")
-}
+}]
 
 
 if "first_message_sent" not in st.session_state:
