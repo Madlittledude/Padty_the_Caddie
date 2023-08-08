@@ -6,10 +6,6 @@ st.set_page_config(page_title="PADTY", page_icon="PADTY/5_leaf_clover.png", layo
 
 # Function to display chat messages
 def display_chat_message(role, content,avatar):
-    # if role == 'assistant':
-    #     avatar = padty
-    # elif role == 'user':
-    #     avatar = colin
     with st.chat_message(role, avatar=avatar):
         st.markdown(content)
 
